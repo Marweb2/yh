@@ -1,0 +1,470 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 4% 4% 4%;
+  overflow: auto;
+}
+.container * {
+  border: none;
+}
+.rw {
+  cursor: pointer;
+  color: var(--gris);
+  transition: 0.15s;
+  border-radius: 0.25rem;
+  width: max-content;
+  align-self: flex-end;
+  margin: 1% 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.rw:hover {
+  background: rgba(230, 230, 230, 0.35);
+}
+.ui {
+  cursor: pointer;
+  color: var(--white);
+  display: none;
+}
+.btn {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  margin: 2% 0;
+}
+.btn div {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.btn label {
+  user-select: none;
+  width: 100%;
+  min-width: 100%;
+  overflow: hidden;
+  padding: 3%;
+  border-radius: 0.65rem;
+  font-weight: var(--medium);
+  color: var(--white);
+  background: var(--blue);
+  box-shadow: var(--box-shadow-value-btn) var(--gris-v-2);
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.1s;
+  max-width: 100%;
+}
+.btn .lbd {
+  pointer-events: none;
+}
+.btn input {
+  display: none;
+}
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.suppr {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+.suppr.dis {
+  pointer-events: none;
+}
+
+.suppr label {
+  max-width: 90%;
+  min-width: 90%;
+  width: 90%;
+  text-align: center;
+  overflow: hidden;
+  padding: 2%;
+  border-radius: 0.5rem;
+  font-weight: var(--medium);
+  color: var(--white);
+  background: var(--red);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: var(--box-shadow-value-btn) var(--gris-v-2);
+  user-select: none;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.suppr.dis label {
+  background: var(--gris);
+}
+.suppr label:hover,
+.btn label:hover {
+  box-shadow: var(--box-shadow-btn);
+}
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo div {
+  position: relative;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  width: 10rem;
+  height: 10rem;
+}
+.photoImg {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.choose {
+  width: 100%;
+  position: relative;
+  padding: 5%;
+}
+.choose label {
+  display: flex;
+  text-transform: uppercase;
+  color: var(--gris);
+  font-weight: var(--medium);
+  font-size: var(--size-m);
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+.choose label:hover {
+  text-decoration: underline;
+}
+.choose .dis {
+  color: var(--gris-v-3);
+  pointer-events: none;
+}
+.not {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.not label {
+  width: 90%;
+  font-weight: var(--regular);
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--gris);
+}
+
+.hr {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0;
+  height: 4%;
+}
+.hr::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: var(--gris-v-4);
+}
+
+.bio {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  height: 28%;
+  gap: 8%;
+}
+.bio label {
+  font-weight: var(--bold);
+  color: var(--gris);
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  width: 100%;
+  text-align: center;
+}
+.bio div {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.textarea {
+  background: var(--gris-v-4);
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  padding: 3% 4%;
+  min-height: 6rem;
+}
+.textarea:hover,
+.textarea:focus {
+  outline: 1px solid var(--gris-v-2);
+}
+
+/* IMG choice */
+
+.chi {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.35);
+  text-align: left;
+  z-index: 10;
+  backdrop-filter: blur(1px);
+  animation: 0.15s;
+}
+@keyframes op {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.chi > div {
+  background: var(--white);
+  border-radius: 1rem;
+  height: 70vh;
+  position: relative;
+  width: 54%;
+  max-width: initial;
+  animation: anim 0.75s;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow-form);
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+    transform: translateY(-7.5%);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chi .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  flex-direction: column;
+}
+.chi .top div:hover i {
+  color: var(--gris);
+}
+.chi .logo {
+  height: 3rem;
+  width: 16rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chi .logoImg {
+  object-fit: cover;
+}
+.chi .close {
+  cursor: pointer;
+  color: var(--gris-v-2);
+  position: absolute;
+  right: 1.3rem;
+  transition: 0.1s;
+}
+.chi .close:hover {
+  color: var(--gris);
+}
+.chi .line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+.chi .line::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: var(--gris-v-4);
+}
+.chi .contenu {
+  max-height: 80%;
+  overflow-x: hidden;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  flex: 1;
+}
+
+.ins {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: var(--gris);
+  width: 100%;
+}
+.ins span {
+  text-align: center;
+  font-size: var(--size-m);
+}
+.contPhoto {
+  --ph: 7.5rem;
+  display: flex;
+  gap: 1rem;
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.pht {
+  width: var(--ph);
+  height: var(--ph);
+  position: relative;
+  border: 2px solid var(--gris-v-4);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  transition: 0.1s ease-out;
+  cursor: pointer;
+}
+.activeImg {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-color: var(--white);
+  box-shadow: none;
+  cursor: default;
+  transition: outline, border-color, box-shadow 0s;
+}
+.activeImg * {
+  outline: none;
+}
+.pht:hover {
+  transform: scale(1.1);
+}
+.activeImg:hover {
+  transform: inherit;
+}
+.ph {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  user-select: none;
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1.5rem;
+}
+.contBtn {
+  align-self: flex-end;
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.6rem 0 0.7rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.contBtn button {
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  font-weight: var(--medium);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  transition: 0.1s ease;
+}
+
+.contBtn button:focus,
+.contBtn button:hover {
+  box-shadow: var(--btn-shadow-h);
+}
+.reset button {
+  background: var(--red);
+}
+.submit button {
+  background: var(--green);
+}
+.dsb .submit button {
+  background: var(--gris);
+  pointer-events: none;
+  box-shadow: none;
+}
+
+@keyframes t {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .iph {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .iph .btn,
+  .iph .bio,
+  .iph .hr,
+  .iph .info,
+  .iph .rw {
+    display: none;
+  }
+  .chi > div {
+    width: 80%;
+    max-width: 40rem;
+  }
+  .rw {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  .iph .ui {
+    display: block;
+    transform: scale(0.9);
+    transition: 0.1s ease;
+  }
+  .iph:hover .ui {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,314 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  flex-wrap: wrap;
+  box-shadow: var(--box-shadow);
+  text-overflow: ellipsis;
+}
+.formContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 100%;
+}
+.container form {
+  background: var(--white);
+  padding: 4% 7%;
+  width: 74%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: space-around;
+  height: 100%;
+  box-shadow: var(--box-shadow-form);
+  gap: 1rem;
+}
+.formMiddle {
+  width: 100%;
+  height: 87.5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.formMiddle * {
+  user-select: none;
+}
+.title {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.title label {
+  font-size: 2rem;
+  color: var(--blue);
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  padding-top: 2.5%;
+  overflow: hidden;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.inputs > div {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.35rem;
+}
+.inputs > div input {
+  position: relative;
+  width: 100%;
+  border: 2px solid var(--gris);
+  padding: 2.5% 2rem 2.5% 1rem;
+  border-radius: 0.35rem;
+  color: var(--black-input);
+  text-align: center;
+}
+
+.inputs > div input:hover,
+.inputs > div input:focus {
+  outline: 1px solid var(--gris-v-2);
+}
+
+.inputs div button {
+  position: absolute;
+  right: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.forgot,
+.rmb {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.remember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gris-text);
+  gap: 0.25rem;
+  padding: 0;
+  user-select: none;
+  max-width: 100%;
+  overflow: hidden;
+}
+.remember span {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+}
+.remember input {
+  cursor: pointer;
+  appearance: none;
+  color: var(--white);
+  border-radius: 4px;
+  border: 2px solid var(--gris-text);
+  transform: scale(0.75);
+  width: inherit;
+  padding: inherit;
+}
+.remember input::before {
+  content: "";
+  border-radius: 4px;
+  width: 0.65rem;
+  height: 0.65rem;
+  font-size: 0.7rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transform-origin: bottom center;
+  transform: translate(-50%, 15%) scale(0);
+  transition: transform 0.2s ease-in;
+}
+
+.remember input:hover,
+.remember input:focus {
+  box-shadow: var(--box-shadow);
+}
+.remember input:checked {
+  border-color: transparent;
+  transform: scale(1);
+  box-shadow: none;
+  outline: none;
+}
+.remember input:checked:before {
+  background-color: var(--blue);
+  content: "\2713";
+  transform: translate(0) scale(1);
+}
+.forgot .link {
+  transform: translateX(5%);
+}
+.forgot .link span {
+  color: var(--gris);
+  font-weight: var(--regular);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.forgot .link:hover span:first-child,
+.forgot .link:focus span:first-child {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.submit {
+  width: 100%;
+  position: relative;
+}
+
+.submit button {
+  padding: 2.5%;
+  background: var(--blue);
+  max-width: 100%;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s;
+  overflow: hidden;
+  color: var(--white);
+  box-shadow: var(--btn-shadow);
+}
+
+.submit button span {
+  font-weight: var(--bold);
+  white-space: nowrap;
+}
+.submit button:hover,
+.submit button:focus {
+  box-shadow: var(--btn-shadow-h);
+}
+.submitLoading button,
+.submitLoading button:focus {
+  filter: blur(0.25px);
+  background: var(--blue-loading);
+  pointer-events: none;
+  box-shadow: var(--box-shadow);
+}
+.btn div:last-child button {
+  padding: 2.5%;
+  width: 100%;
+  color: var(--green);
+  font-weight: var(--bold);
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  background: transparent;
+  transition: 0.1s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.btn div:last-child button:hover,
+.btn div:last-child button:focus {
+  box-shadow: var(--box-shadow);
+}
+.hr {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hr::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: var(--gris-v-3);
+}
+.notRegistered {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.notRegistered label {
+  color: var(--blue);
+  font-weight: var(--medium);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.register {
+  padding: 2.5%;
+  position: relative;
+  width: 100%;
+  background: var(--green);
+  color: var(--white);
+  font-weight: var(--bold);
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s;
+  box-shadow: var(--btn-shadow);
+}
+.container .register {
+  user-select: auto;
+}
+.register:hover,
+.register:focus {
+  box-shadow: var(--btn-shadow-h);
+}
+.loadLink,
+.loadLink:focus {
+  background: var(--green-loading);
+  filter: blur(0.25px);
+  pointer-events: none;
+  box-shadow: var(--box-shadow);
+}
+@media (max-width: 1000px) {
+  .container {
+    box-shadow: none;
+    height: 100%;
+    padding-top: 1rem;
+  }
+  .container form {
+    width: var(--w-l);
+    padding: 1rem 3rem;
+    min-width: auto;
+  }
+}

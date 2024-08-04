@@ -1,0 +1,450 @@
+/** @format */
+
+/* :root {
+  --gris: #7d7d7d;
+  --blue: #007aff;
+  --bold: 700;
+  --gris-v-2: #b3b3b3;
+  --black-input-7: #333333;
+  --black-input-5: #555555;
+  --white: #ffffff;
+  --gris-v-4: #e6e6e6;
+  --red: #ff3b30;
+  --regular: 400;
+  --size-m: 0.875rem;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+} */
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 4% 2%;
+  position: relative;
+  color: var(--gris);
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.container > div {
+  width: 100%;
+  display: flex;
+  position: relative;
+  gap: 1rem;
+}
+
+.container .l {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1 1 0%;
+  gap: 1rem;
+}
+
+.container .l label {
+  font-weight: var(--bold);
+  font-size: 0.9rem;
+  color: var(--blue);
+  width: max-content;
+  max-width: 100%;
+}
+
+.container .r {
+  flex: 3 1 0%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  gap: 0.5rem;
+}
+
+.container .min {
+  flex: 1;
+}
+
+.container .inputR {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  flex-direction: column;
+}
+
+.container .r input {
+  width: 100%;
+  border: 1px solid var(--gris-v-2) !important;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--blue);
+  padding-right: 1.75rem;
+  transition: 0.1s;
+}
+
+.container .r input:hover {
+  border: 1px solid var(--gris-v-2) !important;
+}
+
+.container .r input::placeholder {
+  color: var(--black-input-7);
+}
+
+.inputR i {
+  position: absolute;
+  right: 0.5rem;
+  transition: 0.1s;
+  color: var(--black-input-5);
+  cursor: pointer;
+}
+
+.container .r .menuDeroulant {
+  position: absolute;
+  /* display: flex; */
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 0.25rem;
+  width: 100%;
+  /* height: max-content; */
+  height: 8rem;
+  right: 0;
+  top: 2.4rem;
+  border: 1px solid var(--gris-v-2);
+  overflow-x: hidden;
+  overflow: auto;
+  z-index: 6;
+  animation: anim 0.25s;
+  transform-origin: top;
+  box-shadow: var(--box-shadow);
+}
+
+.container .r .menuDeroulant * {
+  border: none;
+}
+
+.container .r .menuDeroulant.hidden {
+  overflow: hidden;
+  padding: 0;
+}
+
+.container .r .sim div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  height: 23px;
+  transition: 0.15s;
+}
+
+.container .r .sim span {
+  cursor: default;
+}
+
+.container .r .sim div:hover {
+  background: var(--gris-v-4);
+}
+
+.container .r .menuDeroulant i {
+  cursor: pointer;
+}
+
+.container .r .sim .bg {
+  background: var(--gris-v-4);
+  color: var(--blue);
+}
+
+.container .r .bg {
+  color: var(--blue);
+}
+
+.container .upp,
+.container .upp input {
+  /* text-transform: uppercase; */
+}
+
+.container .upp input::placeholder {
+  text-transform: initial;
+}
+
+.container .upp span {
+  font-size: 0.9rem;
+}
+
+/* Ville */
+
+.container .r .pays .lb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5%;
+}
+
+.container .r .pays .lb span {
+  cursor: default;
+}
+
+.container .r .menuDeroulant .bg {
+  background: var(--gris-v-4);
+}
+
+@-webkit-keyframes anim {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@keyframes anim {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+.container .r .pays {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start; */
+}
+
+.container .r .pays div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* min-height: 27px; */
+  transition: 0.15s;
+  padding-left: 0.5rem;
+}
+
+.container .r .pays div:first-child {
+  padding: 0 0.5rem;
+}
+
+.container .r .pays .np {
+  padding: 0.25rem 0.5rem;
+  min-height: 28px;
+}
+
+.container .r .pays div:hover {
+  background: var(--gris-v-4);
+}
+
+.container .r .pays.notHover div:hover {
+  background: transparent;
+}
+
+.container .r .menuDeroulant div h1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.65;
+  cursor: default;
+  min-height: 22px;
+}
+
+.container .r .menuDeroulant div h1 span {
+  color: var(--black-input-7);
+  font-size: var(--size-m);
+  text-transform: uppercase;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.container .r .menuDeroulant div h2 {
+  cursor: default;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.5;
+  min-height: 27px;
+}
+
+.container .r .menuDeroulant div h2 span {
+  color: var(--gris);
+  width: 100%;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.container .r .menuDeroulant i {
+  cursor: pointer;
+  font-size: 1rem;
+  position: initial;
+  transform: initial;
+  padding: initial;
+}
+
+.container .r .menuDeroulant label {
+  font-weight: var(--regular);
+  color: var(--black-input);
+  width: max-content;
+  font-size: 0.8rem;
+  margin: 0.25rem 0;
+  height: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.container .r .menuDeroulant label:hover {
+  text-decoration: underline;
+}
+
+.container .r .menuDeroulant .pays.notHover label {
+  width: 100%;
+}
+
+.container .r .menuDeroulant .pays .blue {
+  color: var(--blue);
+  pointer-events: none;
+}
+
+.container .r .menuDeroulant .pays .blue:hover {
+  text-decoration: none;
+}
+
+.container .r .menuDeroulant .notTogglePays {
+  height: 0;
+  overflow: hidden;
+  background: var(--gris-v-4);
+}
+
+.container .r .menuDeroulant .po {
+  pointer-events: none;
+}
+
+.container .r .menuDeroulant .lng {
+  padding: 0.25rem 0.5rem;
+}
+
+.container .r .menuDeroulant .bg h1 > span,
+.container .r .menuDeroulant .bl {
+  color: var(--blue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .r .menuDeroulant .bl span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .r .menuDeroulant .bg.ch {
+  background: var(--gris-v-4);
+}
+
+.container .r .menuDeroulant .bg .h2 span {
+  color: var(--black-input-7);
+}
+
+.container .r .menuDeroulant .bg .cl span {
+  color: var(--blue);
+}
+
+.container .r .menuDeroulant .pays .blue {
+  pointer-events: initial;
+  cursor: default;
+}
+
+.container .r .menuDeroulant .pays .blue span {
+  color: var(--blue);
+}
+
+.container .r .pays .contFlag {
+  height: 15px;
+  width: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .r .inputR .flagInput {
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  margin-left: 0.5rem;
+}
+
+.container .r .inputL input,
+.container .r .inputL.ic input {
+  padding-left: 2rem;
+}
+
+/* error */
+
+.container .inputR .errI {
+  position: absolute;
+  right: 0.25rem;
+  color: var(--red);
+}
+
+.container .inputR .sym {
+  color: var(--gris);
+  font-style: normal;
+  border-left: 1px solid var(--gris);
+  padding: 0 0.5rem;
+}
+
+.container .inputR .errI span {
+  font-style: normal;
+  text-transform: initial;
+  white-space: nowrap;
+  position: absolute;
+  color: var(--red);
+  background: var(--gris-v-4);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  box-shadow: var(--box-shadow);
+  top: 1.75rem;
+  right: 0;
+  z-index: 7;
+  opacity: 0;
+  transition: 0.15s ease-out;
+}
+
+.container .inputR .errI:hover span {
+  opacity: 1;
+}
+
+.container .inputR .errI:hover ~ input,
+.container .inputR .errI:hover ~ textarea {
+  border: 1px solid var(--gris-v-2);
+  box-shadow: 0 0 0 1px var(--gris-v-2);
+}
+
+.container .r .red {
+  border: 1px solid var(--red);
+  box-shadow: 0 0 0 1px var(--red);
+}
+
+.container .red:hover,
+.container .red:focus {
+  border: 1px solid var(--gris-v-2);
+  box-shadow: 0 0 0 1px var(--gris-v-2);
+}
+
+@media (max-width: 700px) {
+  .container div {
+    flex-direction: column;
+  }
+}

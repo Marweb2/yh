@@ -1,0 +1,131 @@
+/** @format */
+
+.container {
+  --gap: 0.25rem;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: var(--white);
+  padding: var(--gap) 0;
+  gap: 0.35rem;
+  max-width: 100%;
+}
+
+.left {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+}
+.mde span {
+  color: var(--blue);
+}
+.left .ht {
+  text-align: right;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex: 1;
+}
+.left .prs {
+  justify-content: flex-end;
+}
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--green);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+.submitLoading {
+  background: var(--green-loading);
+  filter: blur(0.25px);
+}
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+.clt {
+  color: transparent;
+}
+.left div span,
+.right div label {
+  color: var(--white);
+  text-align: right;
+  font-weight: var(--bold);
+  font-size: var(--size-m);
+}
+.blue .left div span,
+.blue .right div label {
+  color: var(--blue);
+}
+.right {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* gap: var(--gap); */
+  gap: 4px;
+  padding-right: 2px;
+}
+.right > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  /* gap: var(--gap); */
+  gap: 4px;
+}
+.right .d {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  gap: var(--gap);
+}
+
+.right .d span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 1.3rem;
+  width: 1.65rem; */
+  width: 20px;
+  height: 20px;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px var(--black-25);
+  cursor: pointer;
+}
+.ccli .d span {
+  height: 1.25rem;
+  margin-top: 0.4rem;
+}
+.right .d span::before {
+  content: "";
+  position: absolute;
+  background: var(--gris-v-4);
+  width: 100%;
+  height: 100%;
+  transition: 0.15s;
+}
+.right .d .jca::before {
+  background: var(--green);
+}
+.right .d .jcd::before {
+  background: var(--red);
+}

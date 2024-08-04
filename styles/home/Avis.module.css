@@ -1,0 +1,298 @@
+/** @format */
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px;
+  gap: 10px;
+}
+
+.contenu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+  width: 100%;
+  padding: 1rem 0;
+  color: var(--gris);
+  gap: 0.5rem;
+}
+.content {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 30px;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1056px) {
+  .content {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .content {
+    grid-template-columns: auto;
+    /* margin-top: 120px; */
+  }
+  .container {
+    height: auto !important;
+  }
+}
+
+.contcontenudle {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+.imgCont {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.25rem;
+}
+.img {
+  --h-profil: 4.75rem;
+  object-fit: cover;
+  box-shadow: var(--box-shadow);
+  height: var(--h-profil);
+  width: var(--h-profil);
+  border-radius: 50%;
+}
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.4rem 0 0.25rem 5%;
+  /* padding-bottom: 4px; */
+  gap: 0.1rem;
+}
+.infos span {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+.container .infos label {
+  display: flex;
+  font-weight: var(--bold);
+  color: var(--blue);
+  width: 100%;
+  justify-content: flex-start;
+}
+.infos .stars {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  color: var(--green);
+  overflow: hidden;
+}
+.infos .stars div {
+  display: flex;
+  min-width: max-content;
+}
+.infos .stars span {
+  font-weight: var(--regular);
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.infos p,
+.infos span {
+  font-size: var(--size-m);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.contAss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--white);
+  width: 40%;
+  min-width: 18rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 0.25rem 0.35rem 0.2rem 0.35rem;
+  transition: 0.1s ease-out;
+}
+.contAss:hover {
+  box-shadow: rgba(14, 30, 37, 0.1) 0px 2px 4px 4px,
+    rgba(14, 30, 37, 0.25) 0px 0 16px 4px;
+}
+.contAss.active {
+  box-shadow: 3px -2px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 20px 11px rgba(0, 0, 0, 0.21), 0 8px 8px rgba(0, 0, 0, 0.1),
+    3px 7px 20px 1px rgba(0, 0, 0, 0.2);
+}
+
+.contAss .top {
+  display: flex;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+.contAss .cont {
+  flex: 1;
+  padding-left: 0.25rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.contAss .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  text-wrap: nowrap;
+  font-size: 11px;
+}
+
+.contAss .left span {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  font-size: 0.75rem;
+  width: fit-content;
+  user-select: none;
+  text-wrap: nowrap;
+}
+.contAss .left label {
+  font-size: var(--size-m);
+  color: var(--green);
+  margin: 0 0.25rem;
+}
+.contAss .left p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transform: translateY(-4px);
+}
+.contAss .left .sym {
+  padding: 0.2rem 0.31rem;
+  background: var(--red);
+  border-radius: 50%;
+  overflow: hidden;
+  color: var(--white);
+  height: 0.7rem;
+  width: 0.7rem;
+  font-size: 0.6rem;
+  transform: translateY(-0.5px);
+}
+.contAss .right {
+  display: flex;
+  gap: 0.5rem;
+}
+.container .right i {
+  transition: 0.1s ease;
+}
+
+.container .right .close {
+  color: var(--gris-v-3);
+}
+.container .right .close:hover {
+  color: var(--gris-v-1);
+  transform: scale(1.1);
+}
+.hr {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+.hr::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background: var(--gris-v-3);
+}
+.bot {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  /* overflow-y: hidden; */
+}
+.bot div {
+  display: flex;
+  gap: 0.5rem;
+}
+.bot div span {
+  font-size: 1.5rem;
+  color: var(--gris-v-2);
+  cursor: pointer;
+  transition: 0.15s ease-out;
+}
+.bot div span:hover {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gris);
+  transform: scale(1.25);
+}
+.bot div .active {
+  color: var(--blue);
+}
+.bot div .active:hover {
+  color: var(--blue);
+  transform: scale(1);
+  cursor: default;
+}
+.bot i {
+  color: var(--gris-v-1);
+}
+.bot .disbl {
+  color: var(--gris-v-4);
+}
+.bot i:hover {
+  color: var(--gris);
+  transform: scale(1.05);
+}
+.bot p {
+  font-size: 1.5rem;
+}
+
+.auc {
+  flex: 1;
+  padding: 10%;
+}
+.oneAvis {
+  margin-left: 20%;
+  display: flex;
+  align-items: start;
+  flex: 1;
+  /* display: flex;
+  justify-content: space-evenly; */
+}
+.twoAvis {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  flex: 1;
+}
+
+.avisCont {
+  flex-basis: 100%;
+}

@@ -1,0 +1,486 @@
+/** @format */
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.container * {
+  border: none;
+}
+.container input:focus,
+.container textarea:focus {
+  box-shadow: var(--box-shadow);
+}
+
+.container .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgba(235, 235, 235, 0.35);
+  backdrop-filter: blur(1px);
+  height: calc(2.5rem - 1px);
+  color: var(--white);
+}
+
+.lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  gap: 0.5rem;
+}
+.lg label {
+  font-size: 1rem;
+}
+
+.top i {
+  border-radius: 0.25rem;
+  transition: 0.1s;
+  cursor: pointer;
+  display: none;
+}
+.top i:hover {
+  background: rgba(230, 230, 230, 0.35);
+}
+.top label {
+  font-weight: var(--medium);
+  user-select: none;
+}
+.contenu {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+  --fi: 0.75rem;
+}
+.container .profil {
+  display: flex;
+  gap: 2.5%;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 7.25rem;
+  padding: 0.25rem 4%;
+  color: var(--white);
+  border-bottom: 1px solid var(--gris-v-4);
+}
+
+.profil .left {
+  width: max-content;
+  padding: 0 2%;
+  border-radius: 50%;
+}
+.profil .right {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.profilImg {
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  object-fit: cover;
+  --p-img: 5.5rem;
+  height: var(--p-img);
+  width: var(--p-img);
+}
+.right h1 {
+  font-weight: var(--bold);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+.ils p {
+  font-weight: var(--regular);
+  font-size: var(--size-m);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.stars {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+  gap: 0.25rem;
+}
+.stars div {
+  display: flex;
+  min-width: max-content;
+}
+.stars span {
+  color: var(--gris-v-3);
+  font-weight: var(--regular);
+  font-size: var(--size-m);
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.shrInput {
+  background: var(--white);
+  color: var(--blue);
+  padding: 0.25rem 1.25rem 0.25rem 0.25rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  font-size: var(--fi);
+  cursor: default;
+}
+.middle {
+  padding: 0.35rem 4% 0.5rem 4%;
+  width: 100%;
+  gap: 2%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+.more {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.middleCli .more {
+  flex: 1;
+  height: auto;
+}
+.ccli {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+  width: 100%;
+}
+.btnTop {
+  padding: 0;
+  box-shadow: none !important;
+  width: 100% !important;
+  background: transparent !important;
+  display: flex !important;
+  justify-content: start !important;
+}
+.btn div {
+  padding: 0.3rem;
+  min-width: 180px;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  color: var(--white);
+  font-weight: 500;
+  background: var(--blue);
+  box-shadow: var(--btn-shadow);
+}
+
+@media screen and (max-width: 1644px) {
+  .btn div {
+    min-width: 140px;
+  }
+}
+/* @media screen and (max-width: 1452px) {
+  .btn div {
+    min-width: 140px;
+  }
+}
+@media screen and (max-width: 1272px) {
+  .btn div {
+    min-width: 120px;
+  }
+}
+@media screen and (max-width: 1088px) {
+  .btn div {
+    min-width: 100px;
+  }
+}
+@media screen and (max-width: 907px) {
+  .btn div {
+    min-width: 90px;
+  }
+}
+@media screen and (max-width: 805px) {
+  .btn div {
+    min-width: 80px;
+  }
+} */
+
+.btn div label {
+  font-size: var(--size-m);
+  user-select: none;
+}
+.btn .active {
+  color: var(--blue);
+  background: var(--white);
+}
+.btn .activeCli {
+  background: var(--blue);
+  color: var(--white);
+}
+.add {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 2.5%;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.middleCli .add {
+  padding: 0.35rem 0;
+}
+.add form,
+.ccli form {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+.bcl {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.btx {
+  min-height: 5rem;
+}
+.more .textarea {
+  border-radius: 0.5rem;
+  padding: 1.25% 2.25%;
+  cursor: default;
+}
+.moreInfos {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreInfos .def {
+  min-height: 3.3rem;
+}
+
+.op {
+  display: flex;
+  gap: 3%;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.op > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--white);
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+.note {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.note div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+}
+.ntlab {
+  position: absolute;
+  color: var(--blue);
+  font-size: var(--fi);
+  top: 0;
+  left: 0;
+  padding: 0.3rem 0 0 0.4rem;
+  z-index: 3;
+  font-weight: var(--bold);
+  background: var(--white);
+  border-radius: 0.5rem 0.5rem 0 0;
+  user-select: none;
+}
+
+.note .textarea {
+  text-indent: 2.5rem;
+  border-radius: 0.5rem;
+  cursor: default;
+}
+.note .crt {
+  cursor: text;
+}
+.op .lab {
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2.5% 0.1rem;
+  color: var(--white);
+}
+.middleCli .op .lab {
+  padding: 1% 0.1rem;
+}
+.lab span {
+  font-size: var(--size-m);
+  max-width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.op textarea {
+  border-radius: 0.25rem;
+  padding: 2.75%;
+  cursor: default;
+}
+.op input {
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  cursor: default;
+}
+.op .shrInput {
+  padding-right: 1.25rem;
+}
+.shr {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.shr .sh {
+  position: absolute;
+  color: var(--blue);
+  padding: 0 0.25rem;
+  z-index: 6;
+  right: 0;
+  cursor: pointer;
+}
+.shr .pdis {
+  cursor: default;
+}
+.edit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profilLink .linkStyle {
+  position: relative;
+  color: var(--white);
+  background: var(--white);
+  color: var(--blue);
+  padding: 0.04rem 0.14rem;
+  border-radius: 0.25rem;
+}
+
+.profilLink:focus span {
+  text-decoration: underline;
+}
+.profilLink.disable {
+  pointer-events: none;
+}
+.profilLink label {
+  padding: 2.5% 1rem;
+  border-radius: 0.5rem;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: var(--medium);
+  box-shadow: var(--box-shadow-btn);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+  gap: 0.35rem;
+}
+.profilLink label span {
+  font-size: var(--size-m);
+  user-select: none;
+}
+.disable label {
+  background: var(--gris);
+}
+.disable .linkStyle {
+  color: var(--gris);
+}
+@media (max-width: 700px) {
+  .container {
+    border: none;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .contenu {
+    display: none;
+    height: 0;
+  }
+  .col .contenu {
+    display: flex;
+  }
+  .container .top {
+    height: 100%;
+    transition: 0.25s ease;
+    padding: 0;
+  }
+  .lg {
+    cursor: pointer;
+  }
+  .container:hover .top span {
+    transform: scale(1.15);
+  }
+  .col:hover .top span {
+    transform: scale(1);
+  }
+  .col .top {
+    height: 7%;
+    width: 100%;
+    padding: 0.25rem;
+  }
+  .top label {
+    display: none;
+  }
+  .col .top i {
+    display: flex;
+  }
+  .col .top label {
+    display: block;
+  }
+}

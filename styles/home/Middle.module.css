@@ -1,0 +1,229 @@
+/** @format */
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: var(--gris-v-4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--blue);
+  height: 2.5rem;
+  text-transform: uppercase;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--blue);
+  background: var(--white);
+}
+.top * {
+  border: none;
+}
+.top label {
+  user-select: none;
+  font-weight: var(--bold);
+  font-size: 1rem;
+}
+.top span {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top i {
+  position: absolute;
+  right: 1rem;
+  color: var(--gris-v-2);
+  cursor: pointer;
+  transition: 0.1s ease-out;
+}
+.top i:hover {
+  color: var(--gris);
+  transform: scale(1.1);
+}
+.select {
+  position: absolute;
+  right: 1.75rem;
+  top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+  gap: 0.5rem;
+  box-shadow: var(--box-shadow);
+  transform-origin: top right;
+  z-index: 6;
+}
+.select i {
+  content: "";
+  position: absolute;
+  top: -1.1rem;
+  right: 0;
+  border: 0.9rem solid var(--white);
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+.select label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--gris);
+  user-select: none;
+}
+
+.select input {
+  cursor: pointer;
+  appearance: none;
+  color: var(--white);
+  border-radius: 50%;
+  border: 2px solid var(--gris-text);
+  transform: scale(0.75);
+  width: inherit;
+  padding: inherit;
+}
+.select input::before {
+  content: "";
+  border-radius: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  font-size: 0.7rem;
+  padding: 0.15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transform-origin: bottom center;
+  transform: translate(-50%, 15%) scale(0);
+  transition: transform 0.2s ease-in;
+}
+
+.select input:hover,
+.select input:focus {
+  box-shadow: var(--box-shadow);
+}
+.select input:checked {
+  border-color: transparent;
+  transform: scale(1);
+  box-shadow: none;
+  outline: none;
+}
+.select input:checked:before {
+  background-color: var(--blue);
+  content: "\2713";
+  transform: translate(0) scale(1);
+}
+.contenu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  color: var(--gris);
+  flex: 1;
+  height: calc(100% - 7.5rem);
+  /* padding: 2.5% 17%; */
+  overflow: auto;
+}
+.pn {
+  padding: 0.5rem 0;
+}
+.contenu h1 {
+  font-weight: var(--bold);
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  padding: 3% 0;
+}
+.contenu label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  font-weight: var(--regular);
+  font-size: 0.9rem;
+}
+
+.contProjet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.contProjet .menu {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 85%;
+}
+
+.contProjet i {
+  cursor: pointer;
+  transition: 0.1s ease-out;
+  color: var(--gris-v-2);
+}
+.contProjet i:hover {
+  transform: scale(1.1);
+  color: var(--gris);
+}
+
+.contProjet .menu .contTitle {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  min-width: 12rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+.contProjet .contTitle div {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.contProjet .menu p {
+  font-size: 1.5rem;
+  user-select: none;
+  cursor: default;
+}
+.contProjet .menu span {
+  background: var(--gris-v-1);
+  color: var(--white);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.1s;
+  font-weight: var(--bold);
+  max-width: 10rem;
+  transition: 0.1s;
+  user-select: none;
+}
+.contProjet .menu span:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5) inset;
+}
+.contProjet .menu .active {
+  background: var(--blue);
+  min-width: max-content;
+  pointer-events: none;
+}
+
+.contProjet .menu .dr {
+  display: flex;
+  align-items: flex-end;
+}

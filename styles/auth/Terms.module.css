@@ -1,0 +1,57 @@
+.conditions {
+  display: flex;
+  align-items: flex-start;
+  color: var(--gris);
+  user-select: none;
+}
+.conditions span {
+  font-weight: var(--regular);
+}
+.conditions .span {
+  color: var(--gris);
+  font-weight: var(--bold);
+  cursor: pointer;
+}
+.conditions .inh {
+  color: inherit;
+  font-weight: inherit;
+  cursor: initial;
+}
+.conditions input {
+  cursor: pointer;
+  appearance: none;
+  color: var(--white);
+  border-radius: 4px;
+  border: 2px solid var(--gris);
+  transform: scale(0.75);
+}
+.conditions input::before {
+  content: "";
+  border-radius: 4px;
+  width: 0.65rem;
+  height: 0.65rem;
+  font-size: 0.7rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transform-origin: bottom center;
+  transform: translate(-50%, 15%) scale(0);
+  transition: transform 0.2s ease-in;
+}
+
+.conditions input:hover,
+.conditions input:focus {
+  box-shadow: var(--box-shadow);
+}
+.conditions input:checked {
+  box-shadow: none;
+  border-color: transparent;
+  transform: scale(1);
+}
+.conditions input:checked:before {
+  background-color: var(--blue);
+  content: "\2713";
+  transform: translate(0) scale(1);
+}

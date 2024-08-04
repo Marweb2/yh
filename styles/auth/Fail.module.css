@@ -1,0 +1,349 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  box-shadow: var(--box-shadow);
+  min-height: 25rem;
+  text-align: center;
+}
+.container form {
+  width: 74%;
+  height: 95%;
+  background: var(--white);
+  padding: 4% 5%;
+  gap: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: var(--box-shadow-form);
+}
+.contenu {
+  width: 100%;
+  padding: 0 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.switchBtn {
+  display: flex;
+  position: relative;
+  height: max-content;
+  align-self: flex-start;
+}
+.link:focus .switchIcon,
+.link:hover .switchIcon,
+.switchIcon:hover {
+  color: var(--gris-v-2);
+}
+.switchIcon {
+  color: var(--gris-v-3);
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.contenu div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  position: relative;
+}
+.title h1 {
+  color: var(--red);
+  font-weight: var(--medium);
+  font-style: italic;
+  font-size: 1.3rem;
+}
+.rais label {
+  font-weight: var(--regular);
+  color: var(--gris);
+}
+.rais label span {
+  font-weight: var(--medium);
+  text-decoration: underline;
+}
+.inputs {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.35rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.inputs input {
+  position: relative;
+  width: 100%;
+  border: 2px solid var(--gris);
+  padding: 2.5% 2rem 2.5% 1rem;
+  border-radius: 0.35rem;
+  color: var(--black-input);
+  text-align: center;
+}
+
+.inputs input:focus,
+.inputs input:hover {
+  outline: 1px solid var(--gris-v-2);
+}
+.inputs div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputs div button {
+  position: absolute;
+  right: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.submit {
+  padding: 2.5%;
+  width: 100%;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  transition: 0.1s;
+  box-shadow: var(--btn-shadow);
+}
+.submit:hover,
+.submit:focus {
+  box-shadow: var(--btn-shadow-h);
+}
+.submit.submitLoading {
+  filter: blur(0.25px);
+  background: var(--blue-loading);
+  pointer-events: none;
+  box-shadow: var(--box-shadow);
+}
+.ubtn {
+  padding: 2.5%;
+  width: 100%;
+  background: var(--white);
+  font-weight: var(--bold);
+  color: var(--green);
+  border: 2px solid var(--green);
+  width: 100%;
+  border-radius: 4px;
+  transition: 0.1s;
+  text-align: center;
+  cursor: default;
+}
+.ubtn:hover,
+.ubtn:active,
+.ubtn:focus {
+  box-shadow: var(--box-shadow);
+}
+.ubtn.active {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: var(--box-shadow);
+  color: var(--blue);
+}
+
+.adr {
+  position: relative;
+  color: var(--blue);
+}
+.copy {
+  position: absolute;
+  right: -1.5rem;
+  cursor: pointer;
+  color: var(--black-input);
+  transition: 0.1s;
+  opacity: 0;
+}
+.adr:hover .copy {
+  opacity: 1;
+}
+
+.badge {
+  position: absolute;
+  top: -1.8rem;
+  right: -0.35rem;
+  font-size: 0.75rem;
+  background: var(--black-input);
+  padding: 0.15rem 0.3rem;
+  border-radius: 2px;
+  box-shadow: var(--box-shadow);
+  color: var(--white);
+  z-index: 3;
+  animation: t 0.5s;
+  display: none;
+}
+.adr:hover .badge {
+  display: block;
+}
+.badge::before {
+  content: "";
+  position: absolute;
+  background: var(--black-input);
+  height: 0.5rem;
+  width: 0.5rem;
+  bottom: -0.25rem;
+  left: 65%;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+.forgot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.link {
+  width: max-content;
+}
+.forgot .link span {
+  color: var(--blue);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.forgot .link:hover span:first-child,
+.forgot .link:focus span:first-child {
+  text-decoration: underline;
+}
+
+.remember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gris-text);
+  gap: 0.25rem;
+  padding: 0;
+  user-select: none;
+  height: 0;
+}
+.remember span {
+  font-size: 0.9rem;
+}
+.remember input {
+  cursor: pointer;
+  appearance: none;
+  color: var(--white);
+  border-radius: 4px;
+  border: 2px solid var(--gris-text);
+  transform: scale(0.75);
+  width: inherit;
+  padding: inherit;
+}
+.remember input::before {
+  content: "";
+  border-radius: 4px;
+  width: 0.65rem;
+  height: 0.65rem;
+  font-size: 0.7rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transform-origin: bottom center;
+  transform: translate(-50%, 15%) scale(0);
+  transition: transform 0.2s ease-in;
+}
+
+.remember input:hover,
+.remember input:focus {
+  box-shadow: var(--box-shadow);
+}
+.remember input:checked {
+  border-color: transparent;
+  transform: scale(1);
+  box-shadow: none;
+  outline: none;
+}
+.remember input:checked:before {
+  background-color: var(--blue);
+  content: "\2713";
+  transform: translate(0) scale(1);
+}
+.hr {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+.hr::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: var(--gris-v-3);
+}
+.notRegistered {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.notRegistered label {
+  color: var(--blue);
+  font-weight: var(--medium);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.switch {
+  padding: 2.5%;
+  position: relative;
+  width: 100%;
+  color: var(--white);
+  font-weight: var(--bold);
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s;
+  box-shadow: var(--btn-shadow);
+}
+.switch:hover,
+.switch:focus {
+  box-shadow: var(--btn-shadow-h);
+}
+.login {
+  background: var(--blue);
+}
+.register {
+  background: var(--green);
+}
+.register.loadLink {
+  background: var(--green-loading);
+  filter: blur(0.25px);
+  pointer-events: none;
+  box-shadow: var(--box-shadow);
+}
+@media (max-width: 1000px) {
+  .container {
+    box-shadow: none;
+    height: 100%;
+    padding-top: 1rem;
+  }
+  .container form {
+    width: var(--w-l);
+    padding: 1.5rem 2.5rem;
+    min-width: auto;
+  }
+}

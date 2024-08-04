@@ -1,0 +1,62 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+.btn {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.btn > div {
+  width: 100%;
+  position: relative;
+}
+.btn div div {
+  font-size: 0.9rem;
+  font-weight: var(--regular);
+  color: var(--white);
+  background: rgba(186, 223, 91, 0.9);
+  z-index: 6;
+  border-radius: 0.8rem;
+  width: 28rem;
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  animation: enterAnim 0.3s forwards;
+}
+@keyframes enterAnim {
+  100% {
+    opacity: 1;
+  }
+}
+
+.btc {
+  padding: 5% 0;
+  width: 100%;
+  background: var(--white);
+  font-weight: var(--bold);
+  border: 2px solid var(--gris);
+  width: 100%;
+  border-radius: 4px;
+  transition: 0.1s;
+  text-align: center;
+  cursor: default;
+}
+.btc::placeholder {
+  color: var(--black-input-5);
+}
+.btc:hover,
+.btc:active,
+.btc:focus {
+  box-shadow: var(--box-shadow);
+}
+
+.container div.active .btc {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: var(--box-shadow);
+}
+.container div.active .btc::placeholder {
+  color: var(--blue);
+}

@@ -1,0 +1,240 @@
+/** @format */
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.container .top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  color: var(--white);
+  position: relative;
+  border-bottom: 1px solid var(--gris-v-4);
+  /* display: flex;
+  flex-direction: column; */
+}
+.top * {
+  border: none;
+}
+.top i {
+  color: var(--gris);
+  display: none;
+  user-select: none;
+}
+.top label {
+  padding: 0 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--gris);
+  position: relative;
+}
+.top label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease;
+}
+.top label:hover span {
+  transform: scale(1.15);
+}
+.top label.active,
+.top label.active:hover {
+  box-shadow: none;
+}
+.top label:hover i {
+  box-shadow: none;
+}
+.top label.active i {
+  color: var(--blue);
+}
+
+.contenu {
+  /* overflow: hidden; */
+  height: calc(100% - 2.5rem);
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  gap: 16px;
+  /* justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: calc(100% - 50px); */
+}
+
+.contenu * {
+  border: none;
+  box-shadow: none;
+}
+.favoris {
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  /* align-items: center; */
+  /* padding: 5% 0; */
+  gap: 8px;
+  height: 100%;
+}
+
+.favoris span {
+  text-transform: uppercase;
+  font-weight: var(--medium);
+  color: var(--gris-v-1);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.favoris i {
+  color: var(--gris-v-1);
+}
+.nt {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+.nt label {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nt label span {
+  font-weight: var(--regular);
+  color: var(--gris-v-1);
+  width: 100%;
+  text-align: center;
+  font-size: var(--size-m);
+}
+
+@media screen and (max-width: 1130px) {
+  .contenu {
+    display: none;
+  }
+  .top label {
+    display: none;
+  }
+  .top i {
+    display: flex;
+    transform: scale(0.9);
+    transition: 0.1s ease;
+    cursor: pointer;
+  }
+  .topCollapse {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px 6px;
+    border-bottom: 1px solid var(--gris-v-1) !important;
+    margin: 0 auto;
+    width: 100%;
+    color: var(--gris-v-1);
+  }
+  .contenuCollapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 50px) !important;
+  }
+}
+@media (max-width: 700px) {
+  .container {
+    border: none;
+  }
+  .col {
+    width: 100%;
+  }
+  .col .contenu {
+    display: flex;
+  }
+  .col:hover .top span {
+    transform: scale(1);
+  }
+  /* .contenu {
+    display: none;
+  } */
+  .top {
+    height: 100%;
+    padding: 0;
+    flex-direction: column;
+  }
+  .col .top {
+    height: 7%;
+    width: 100%;
+  }
+  /* .top label {
+    display: none;
+  } */
+  .col .top label {
+    display: block;
+    margin: 0.5rem;
+  }
+  .col .top label {
+    display: block;
+  }
+  /* .top i {
+    display: flex;
+    transform: scale(0.9);
+    transition: 0.1s ease;
+    cursor: pointer;
+  } */
+  .container:hover .top i:hover {
+    transform: scale(1);
+  }
+  .topCollapse {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px 6px;
+    border-bottom: 1px solid var(--gris-v-1) !important;
+    margin: 0 auto;
+    width: 100%;
+    color: var(--gris-v-1);
+  }
+  .contenuCollapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 50px) !important;
+  }
+}
+.searchContainer {
+  width: 93%;
+  height: 35px;
+  background: var(--gris-v-3);
+  border-radius: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.icon {
+  width: 25px !important;
+  height: 25px;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  width: calc(100% - 25px);
+  height: 100%;
+  background-color: var(--gris-v-3);
+}

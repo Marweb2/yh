@@ -1,0 +1,24 @@
+.tmp {
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  /* border-bottom: 2px solid var(--blue); */
+  width: 100%;
+}
+.tmp label {
+  color: var(--gris-v-1);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  text-wrap: nowrap;
+}
+.tmp label i {
+  cursor: pointer;
+  transition: 0.1s;
+}
+.tmp label i:hover {
+  color: var(--gris);
+  transform: scale(1.15);
+}

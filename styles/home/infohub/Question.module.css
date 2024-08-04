@@ -1,0 +1,66 @@
+/** @format */
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  max-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4%;
+  max-width: 100%;
+  height: 90%;
+  overflow-y: auto;
+}
+.cntq {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cntq label {
+  color: var(--blue);
+  font-weight: var(--bold);
+  padding-left: 1%;
+  font-size: var(--size-m);
+}
+.cntq textarea {
+  width: 100%;
+  border: 1px solid var(--gris-v-2);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--black-input);
+  transition: 0.1s;
+  cursor: default;
+}
+.bot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bot i {
+  cursor: pointer;
+  color: var(--gris-v-2);
+}
+.bot i:hover {
+  color: var(--gris);
+  transform: scale(1.05);
+}
+.bot .disable {
+  pointer-events: none;
+  color: var(--gris-v-4);
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,148 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 4% 2%;
+  position: relative;
+  color: var(--gris);
+  display: flex;
+  flex-direction: column;
+  gap: 6%;
+}
+.container > div {
+  width: 100%;
+  display: flex;
+  position: relative;
+  gap: 1rem;
+}
+.container .l {
+  width: 100%;
+  text-align: center;
+  padding: 0 25%;
+}
+.container .l label {
+  color: var(--blue);
+  font-weight: var(--regular);
+  font-size: 0.9rem;
+  font-weight: var(--bold);
+  width: max-content;
+}
+
+.container .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.container textarea {
+  width: 100%;
+  border: 1px solid var(--gris-v-2);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--black-input);
+  transition: 0.1s;
+  height: 6rem;
+}
+
+.container textarea:hover,
+.container textarea:focus {
+  border: 1px solid var(--gris-v-2);
+  box-shadow: 0 0 0 1px var(--gris-v-2);
+}
+
+.container textarea::placeholder {
+  color: var(--gris);
+}
+
+.container .r i {
+  position: absolute;
+  right: 0.25rem;
+  color: var(--red);
+}
+.container .contTxt i {
+  top: 0.5rem;
+}
+.container .r .sym {
+  color: var(--gris);
+  font-style: normal;
+  border-left: 1px solid var(--gris);
+  padding: 0 0.5rem;
+}
+.container .r i span {
+  font-style: normal;
+  white-space: nowrap;
+  position: absolute;
+  color: var(--red);
+  background: var(--gris-v-4);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  box-shadow: var(--box-shadow);
+  top: 1.75rem;
+  right: 0;
+  opacity: 0;
+  transition: 0.15s ease-out;
+}
+.container .r i:hover span {
+  opacity: 1;
+}
+.container .r i:hover ~ input,
+.container .r i:hover ~ textarea {
+  border: 1px solid var(--gris-v-2);
+  box-shadow: 0 0 0 1px var(--gris-v-2);
+}
+/* error */
+.grid div {
+  position: relative;
+}
+.grid div i {
+  position: absolute;
+  right: 0.25rem;
+  top: 0.5rem;
+  color: var(--red);
+}
+
+.grid div .sym {
+  color: var(--gris);
+  font-style: normal;
+  border-left: 1px solid var(--gris);
+  padding: 0 0.5rem;
+}
+.grid div i span {
+  font-style: normal;
+  white-space: nowrap;
+  position: absolute;
+  color: var(--red);
+  background: var(--gris-v-4);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  box-shadow: var(--box-shadow);
+  top: 1.75rem;
+  right: 0;
+  opacity: 0;
+  transition: 0.15s ease-out;
+}
+.grid div i:hover span {
+  opacity: 1;
+}
+.grid div i:hover ~ input,
+.grid div i:hover ~ textarea {
+  border: 1px solid var(--gris-v-2);
+  box-shadow: 0 0 0 1px var(--gris-v-2);
+}
+.grid div .red {
+  border: 1px solid var(--red);
+  box-shadow: 0 0 0 1px var(--red);
+}
+.grid div .red:hover,
+.grid div .red:focus {
+  border: 1px solid var(--gris-v-2);
+  box-shadow: 0 0 0 1px var(--gris-v-2);
+}
+
+@media (max-width: 700px) {
+  .container .grid {
+    grid-template-columns: 1fr;
+  }
+}

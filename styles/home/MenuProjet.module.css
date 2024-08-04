@@ -1,0 +1,65 @@
+/** @format */
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-height: calc(2.5rem - 1px);
+}
+
+.menu {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 90%;
+}
+
+.menu .contTitle {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+.menu p {
+  font-size: 1.5rem;
+  user-select: none;
+  cursor: default;
+}
+.menu .contTitle div {
+  padding: 0.5rem 0;
+}
+.menu span {
+  background: var(--gris-v-1);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.1s;
+  font-weight: var(--bold);
+  max-width: 10rem;
+  transition: 0.1s;
+  user-select: none;
+  font-size: var(--size-m);
+}
+.menu span:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5) inset;
+}
+.menu .active {
+  background: var(--blue);
+  min-width: max-content;
+  pointer-events: none;
+}
+
+.menu .dr {
+  display: flex;
+  align-items: flex-end;
+}

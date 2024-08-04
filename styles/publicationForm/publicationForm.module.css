@@ -1,0 +1,155 @@
+.popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.112);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gris-text);
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  height: max-content;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: rgb(17 12 46 / 59%) 0px -1px 14px 0px;
+  margin-top: 8px;
+  padding: 0 8px 8px 8px;
+}
+
+.title {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.282);
+}
+.title * {
+  border-bottom: none;
+}
+.txt {
+  display: flex;
+  justify-content: center;
+  flex-basis: 95%;
+}
+
+.txt h4 {
+  color: var(--blue);
+}
+
+.btn {
+  background: none;
+}
+
+.user {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: var(--gris);
+  margin-top: 8px;
+}
+.photo {
+  background: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+}
+.form {
+  color: var(--gris);
+}
+
+.fakeInput {
+  width: fit-content;
+  display: flex;
+  border: 1px solid var(--gris);
+  justify-content: space-between;
+  padding: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.fakeInput * {
+  border: none;
+}
+
+.inputs input ::placeholder {
+  color: var(--gris-text);
+}
+
+/* .inputs input { */
+/* color: var(--blue);
+} */
+
+.comp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.inputs input {
+  height: 30px;
+  padding-left: 4px;
+}
+.inputs textarea {
+  padding: 4px 0 0 4px;
+  font-size: 14px;
+}
+.inputs * {
+  width: 100%;
+  border: 2px solid transparent;
+  background: var(--gris-v-4);
+  border-radius: 4px;
+}
+
+.bottom {
+  height: 30px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottom i {
+  cursor: pointer;
+}
+
+.drop {
+  width: 100%;
+  height: 100px;
+  background: white;
+  top: 26px;
+  left: 0;
+  position: absolute;
+  box-shadow: rgb(17 12 46 / 59%) 0px 6px 12px 0px;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+.item {
+  padding: 4px;
+}
+
+.item:hover {
+  background: var(--gris-v-4);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    width: 95%;
+  }
+}

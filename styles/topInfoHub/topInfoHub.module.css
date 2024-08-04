@@ -1,0 +1,83 @@
+.container {
+  width: 100%;
+  max-width: 1000px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 16px;
+  /* flex-wrap: wrap; */
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 980px) {
+  .container {
+    /* padding: 0 16px; */
+    width: 98%;
+  }
+}
+
+.btn {
+  min-width: 140px;
+  padding: 4px;
+  border-radius: 4px;
+  background: var(--blue);
+  color: white;
+  box-shadow: var(--btn-shadow);
+  font-size: 12px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.active {
+  min-width: 140px;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--blue);
+  background: white;
+  box-shadow: var(--btn-shadow);
+  border: 1px solid var(--blue);
+  font-size: 12px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.active * {
+  border: none;
+}
+.btn * {
+  border: none;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.SearchBarContainer {
+  background: white;
+  min-width: 140px;
+  max-width: 140px;
+  padding: 0 8px;
+  height: 27px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  font-size: xx-small;
+}
+.SearchBarContainer input {
+  background: transparent;
+  padding-bottom: 3px;
+  width: 100%;
+}
+.SearchBarContainer input::placeholder {
+  background: transparent;
+  font-size: x-small;
+}

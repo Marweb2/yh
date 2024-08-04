@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: var(--white);
+}
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+  max-width: 50%;
+}
+.img {
+  height: 10rem;
+  width: 40rem;
+}
+.contImg {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: initial;
+  flex-direction: column;
+}
+
+.line {
+  position: relative;
+  --m-w: 40rem;
+  --wd: 80%;
+  height: 0.5rem;
+  background: var(--blue);
+  width: var(--wd);
+  max-width: var(--m-w);
+  min-width: 33rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line span {
+  --rond: 1rem;
+  position: absolute;
+  width: var(--rond);
+  height: var(--rond);
+  border: 0.5rem solid var(--blue);
+  background: var(--white);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+.line span:last-child {
+  right: 0;
+}
+.slogan {
+  font-size: 3rem;
+  width: 92.5%;
+  max-width: 39rem;
+  text-align: center;
+  color: var(--green);
+  padding-top: 2.35rem;
+  font-style: italic;
+  font-weight: var(--bold);
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: var(--linear-gradient);
+  border-radius: 2px 0 0 2px;
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    overflow: hidden;
+  }
+  .container::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 150%;
+    background: var(--linear-gradient);
+    bottom: -50%;
+    left: -24%;
+    border-radius: 50%;
+  }
+  .contImg {
+    max-height: 6rem;
+  }
+  .img {
+    height: 12rem;
+    width: 30rem;
+  }
+  .line {
+    width: var(--w-l);
+    min-width: initial;
+  }
+  .slogan {
+    width: 100%;
+    font-size: 2rem;
+    max-width: var(--w-l);
+  }
+  .form {
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .left {
+    justify-content: flex-start;
+    height: max-content;
+    flex: none;
+    max-width: 100%;
+  }
+  .contImg {
+    height: 100%;
+    width: 100%;
+  }
+  .right {
+    background: transparent;
+  }
+}

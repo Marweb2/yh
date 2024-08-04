@@ -1,0 +1,250 @@
+/** @format */
+
+.container {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.left {
+  height: 100%;
+  /* width: 25%; */
+  width: 320px;
+  background: var(--linear-gradient);
+  border-right: 2px solid var(--gris-v-2);
+}
+.left * {
+  border: none;
+}
+.middle {
+  height: 100%;
+  width: calc(100% - 25% - 400px);
+  flex: 1;
+}
+.right {
+  height: 100%;
+  width: 250px;
+  background: var(--white);
+  border-left: 2px solid var(--gris-v-2);
+}
+.right * {
+  border: none;
+}
+.leftR,
+.rightR {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  max-width: none;
+}
+.chi {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.35);
+  text-align: left;
+  max-height: 100vh;
+  z-index: 27;
+  backdrop-filter: blur(1px);
+}
+.chi > div {
+  background: var(--white);
+  border-radius: 1rem;
+  position: relative;
+  width: 54%;
+  min-width: 16rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow-form);
+}
+.hr {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+.hr::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: var(--gris-v-3);
+}
+.chi .close {
+  cursor: pointer;
+  color: var(--gris-v-2);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transition: 0.1s;
+}
+.chi .close:hover {
+  color: var(--gris);
+}
+.chi .line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+.chi .line::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: var(--gris-v-4);
+}
+.chi .contenu {
+  overflow-x: hidden;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.title {
+  font-size: 3rem;
+  width: 100%;
+  text-align: center;
+  color: var(--green);
+  font-weight: var(--bold);
+}
+.ins {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  color: var(--gris);
+  width: 100%;
+}
+.ins span {
+  width: 100%;
+  text-align: center;
+}
+.mess {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mess span {
+  color: var(--black-input);
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 1130px) {
+  .right {
+    position: absolute;
+    bottom: 64px;
+    right: 14px;
+    height: max-content;
+    width: 42px;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow-middle);
+    background: var(--white);
+    display: block;
+    z-index: 3;
+  }
+  .rs {
+    z-index: 5;
+  }
+  .rs {
+    height: 100%;
+    width: 250px;
+    background: var(--white);
+    backdrop-filter: blur(1px);
+    border-radius: initial;
+    bottom: initial !important;
+    right: initial;
+    cursor: initial;
+    box-shadow: none;
+    transition: 0.2s;
+  }
+}
+
+@media (max-width: 700px) {
+  .left {
+    position: absolute;
+    bottom: 35px;
+    right: 14px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow-form);
+    display: block;
+    z-index: 3;
+  }
+  .left:hover {
+    box-shadow: var(--box-shadow);
+  }
+  .right {
+    position: absolute;
+    bottom: 64px;
+    right: 14px;
+    height: max-content;
+    width: 42px;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow-middle);
+    background: var(--white);
+    display: block;
+    z-index: 3;
+  }
+  .ls {
+    height: 100%;
+    width: 100%;
+    background: var(--bg-1);
+    backdrop-filter: blur(1px);
+    border-radius: initial;
+    bottom: initial;
+    right: initial;
+    cursor: initial;
+    box-shadow: none;
+  }
+  .rs {
+    height: 100%;
+    width: 250px;
+    background: var(--white);
+    backdrop-filter: blur(1px);
+    border-radius: initial;
+    bottom: initial !important;
+    right: initial;
+    cursor: initial;
+    box-shadow: none;
+    transition: 0.2s;
+  }
+  .ls,
+  .rs {
+    z-index: 5;
+  }
+  .none {
+    display: none;
+  }
+  .ls:hover {
+    box-shadow: none;
+  }
+  .ls .leftR {
+    max-width: 375px;
+    background: var(--linear-gradient);
+  }
+  .rs .rightR {
+    max-width: 22rem;
+  }
+}

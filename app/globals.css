@@ -1,0 +1,714 @@
+/** @format */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../assets/fonts/Archivo-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("../assets/fonts/Archivo-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("../assets/fonts/Archivo-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+*,
+html,
+body {
+  /* variables */
+
+  --green: #badf5b;
+  --blue: #036eff;
+  --blue-loading: rgba(3, 110, 255, 0.5);
+  --green-loading: rgba(186, 223, 91, 0.5);
+  --blue-8: rgba(3, 108, 255, 0.8);
+  --red: #ff5757;
+  --white: #fff;
+  --gris: #b9b9b9;
+  --gris-text: #888;
+  --gris-v-1: #c9c9c9;
+  --gris-v-2: #d1d1d1;
+  --gris-v-3: #e8e8e8;
+  --gris-v-4: #ebebeb;
+  --black-input: rgba(0, 0, 0, 0.9);
+  --black-input-7: rgba(0, 0, 0, 0.7);
+  --black-input-5: rgba(0, 0, 0, 0.5);
+  --bg-1: rgba(0, 0, 0, 0.1);
+  --box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  --box-shadow-middle: -20px 0 10px -20px rgba(0, 0, 0, 0.4) inset,
+    20px 0 10px -20px rgba(0, 0, 0, 0.4) inset;
+  --box-shadow-btn: 2px 3px 5px -1px hsla(0, 0%, 0%, 0.4);
+
+  /* button  */
+  --btn-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 20px 1px rgba(0, 0, 0, 0.2);
+
+  /* button hover */
+  --btn-shadow-h: 0 4px 6px 1px rgba(0, 0, 0, 0.2),
+    0 3px 6px 1px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.12),
+    0 8px 14px 1px rgba(0, 0, 0, 0.1), 0 16px 25px 2px rgba(0, 0, 0, 0.2);
+
+  --box-shadow-value-btn: 2px 3px 5px -1px;
+  --box-shadow-form: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  --bold: 700;
+  --medium: 500;
+  --regular: 400;
+  --linear-gradient: linear-gradient(135deg, var(--green), var(--blue))
+    var(--green);
+  --linear-gradient-reverse: linear-gradient(135deg, var(--blue), var(--green))
+    var(--green);
+  --black-25: rgb(0, 0, 0, 0.3);
+  --w-l: 30rem;
+
+  /* font size */
+  --size-m: 0.85rem;
+
+  /* variables */
+  margin: 0;
+  padding: 0;
+  font-size: calc(0.6vh + 0.45vw + 5px);
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  color: inherit;
+  text-overflow: ellipsis;
+  text-decoration: inherit;
+  border: inherit;
+  outline: inherit;
+  font-family: "Archivo", sans-serif !important;
+}
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--gris-v-1) transparent !important;
+}
+*::-webkit-scrollbar {
+  width: 4px !important;
+  cursor: default !important;
+}
+
+*::-webkit-scrollbar-button:start,
+*::-webkit-scrollbar-button:end {
+  display: none;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--gris-v-2);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gris-v-1);
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  transition: 0.15s;
+}
+
+*::selection {
+  background: var(--green);
+  color: var(--blue);
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input,
+textarea {
+  color: var(--black-input-7);
+  font-weight: var(--medium);
+  font-family: "Archivo", sans-serif;
+}
+textarea {
+  font-size: 0.8rem;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  hyphens: auto;
+  overflow-x: hidden;
+}
+button,
+img {
+  user-select: none;
+}
+.try1 {
+  transform: translateY(1px);
+}
+.trx1 {
+  transform: translateX(1px);
+}
+.z3 {
+  z-index: 3;
+}
+.z6 {
+  z-index: 6;
+}
+.usn {
+  user-select: none;
+  /* font-size: small !important; */
+}
+.pen {
+  pointer-events: none;
+}
+.upp {
+  text-transform: uppercase;
+}
+.scr {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gris-v-1) transparent;
+}
+.scr::-webkit-scrollbar {
+  width: 6px;
+  cursor: default;
+}
+
+.scr::-webkit-scrollbar-button:start,
+.scr::-webkit-scrollbar-button:end {
+  display: none;
+}
+.scr::-webkit-scrollbar-thumb {
+  background-color: var(--gris-v-2);
+}
+
+.scr::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gris-v-1);
+}
+.scr::-webkit-scrollbar-track {
+  background-color: transparent;
+  transition: 0.15s;
+}
+/* enter */
+
+/* container */
+.fc-enter {
+  opacity: 0.1;
+}
+.fc-enter-active {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/* contenu */
+.fc-enter .cont {
+  transform: translateY(-7.5%);
+}
+
+.fc-enter-active .cont {
+  transform: translateY(0);
+  transition: 0.5s ease-out;
+}
+
+/* exit */
+
+/* container */
+.fc-exit {
+  opacity: 1;
+}
+.fc-exit-active {
+  opacity: 0.1;
+  transition: 0.5s;
+}
+
+/* contenu */
+.fc-exit .cont {
+  transform: translateY(0%);
+}
+.fc-exit-active .cont {
+  transform: translateY(7.5%);
+  transition: 0.3s ease-in;
+}
+
+/* container */
+.pcf-enter {
+  opacity: 0.1;
+}
+.pcf-enter-active {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/* contenu */
+.pcf-enter .cft {
+  transform: translateY(-7.5%);
+}
+
+.pcf-enter-active .cft {
+  transform: translateY(0);
+  transition: 0.35s ease-out;
+}
+
+/* exit */
+
+/* container */
+.pcf-exit {
+  opacity: 1;
+}
+.pcf-exit-active {
+  opacity: 0.1;
+  transition: 0.35s;
+}
+
+/* contenu */
+.pcf-exit .cft {
+  transform: translateY(0%);
+}
+.pcf-exit-active .cft {
+  transform: translateY(7.5%);
+  transition: 0.35s ease-in;
+}
+/* container */
+.sc-enter {
+  transform: scale(0) translateY(-100px);
+}
+.sc-enter-active {
+  transition: 0.3s;
+  transform: scale(1) translateY(0);
+}
+
+/* exit */
+
+/* container */
+.sc-exit {
+  opacity: 1;
+}
+.sc-exit-active {
+  opacity: 0.1;
+  transform: translateY(-25px) scale(0);
+  transition: 0.35s;
+}
+
+.ProjectInfos_container__ttzTu input:hover,
+.ProjectInfos_container__ttzTu input:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+.css-u90vrx-MuiAutocomplete-root .MuiOutlinedInput-root {
+  padding: 0 !important;
+}
+.project-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  margin-top: 4px;
+}
+.project-name-container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+.project-name-container-p {
+  background: var(--gris-v-1);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.project-name-container-p:hover {
+  cursor: pointer;
+}
+.project-name-container-p-active {
+  background-color: var(--blue);
+}
+.MenuProjet_menu__FcjHR p {
+  font-size: 14px !important;
+}
+.historique {
+  display: flex !important;
+  gap: 4px !important;
+}
+@media screen and (max-width: 700px) {
+  .historique {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.LR_right__MnHGV {
+  bottom: 85px !important ;
+}
+.c-pointer {
+  cursor: pointer;
+}
+.watch {
+  color: var(--gris-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.css-u90vrx-MuiAutocomplete-root
+  .MuiAutocomplete-inputRoot
+  .MuiAutocomplete-input {
+  width: 0;
+  min-width: 90% !important;
+  border: none;
+}
+.ProjectInfos_container__ttzTu > div {
+  width: 100%;
+  /* display: flex;
+  position: relative;
+  gap: 1rem;
+  flex-direction: row !important; */
+}
+@media (max-width: 700px) {
+  .css-u90vrx-MuiAutocomplete-root {
+    width: 100% !important;
+    border: none !important;
+  }
+}
+.css-ojpekx .MuiAutocomplete-inputRoot .MuiAutocomplete-input {
+  width: 0px;
+  min-width: 90% !important;
+  border: none !important;
+}
+
+.project-name-client {
+  background: var(--blue);
+  color: var(--white);
+  padding: 2px;
+  border-radius: 2px 4px;
+  width: fit-content;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[data-author="me"] {
+  background: linear-gradient(
+    to right,
+    #363795,
+    #005c97
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 10px !important;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 100px;
+  min-height: 100vh;
+  background-color: #eee;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: calc(100% - 40px);
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0;
+  color: white;
+  background: #005c97;
+  background: -webkit-linear-gradient(to right, #363795, #005c97);
+  background: linear-gradient(to right, #363795, #005c97);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100px;
+}
+
+.logo {
+  display: block;
+  height: 20px;
+  margin: 0.5em;
+}
+
+.svg {
+  fill: #005c97;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+}
+
+.octo-arm {
+  transform-origin: 130px 106px;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (min-width: 600px) {
+  .logo {
+    height: 40px;
+    margin: 1em;
+  }
+
+  .ably {
+    height: 60px;
+  }
+}
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  top: -10px !important;
+}
+
+.css-uthrf1-MuiAutocomplete-root .MuiOutlinedInput-root {
+  padding: 0 !important;
+}
+
+.MuiInputBase-input {
+  border: none !important;
+}
+
+.list {
+  background: #c98c8c;
+  display: flex;
+  flex-direction: column;
+}
+/* @media screen and (max-width: 500px) {
+  .mobileVersion {
+    margin-right: 21px;
+  }
+} */
+.rel {
+  position: relative;
+}
+.drop {
+  position: absolute;
+  bottom: -5px;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 4;
+  background: #ffffff;
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  border-radius: 4px;
+  min-width: 115px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+.h0 {
+  height: 0;
+  position: absolute;
+  background: #ffffff;
+  bottom: -5px;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.drop .item {
+  padding: 4px;
+  height: 23px;
+}
+
+.drop .item:hover {
+  background: var(--gris-v-3);
+}
+
+.pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* .css-oisji6-MuiButtonBase-root-MuiButton-root:hover { */
+.assBtn button:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: var(--green) !important;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.css-yjac0q .MuiAutocomplete-inputRoot .MuiAutocomplete-input {
+  width: 100% !important;
+  border: none !important;
+}
+
+.css-yjac0q .MuiAutocomplete-inputRoot .MuiAutocomplete-input {
+  padding: 0 !important;
+}
+
+.css-p0rm37 {
+  position: absolute;
+  left: 0px;
+  top: -8px !important;
+}
+
+.css-yjac0q .MuiOutlinedInput-root .MuiAutocomplete-input:hover {
+  border: none !important;
+}
+input#tarif {
+  width: 75px;
+}
+button {
+  cursor: pointer;
+}
+.c-pointer label {
+  cursor: pointer;
+}
+.avis-date {
+  word-break: keep-all;
+}
+
+.error-response {
+  border: 2px var(--red) solid !important;
+}
+.Right_top__Z1T2J label:hover span {
+  transform: scale(1) !important;
+}
+
+/* .assBtn button:hover {
+  background: #b9b9b9 !important;
+  pointer-events: none;
+} */
+.paysItem {
+  min-height: 20px !important;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+}
+
+.paysInput {
+  border: 1px solid var(--gris);
+  width: 80%;
+  padding: 4px 0;
+  border-radius: 4px;
+}
+
+.new {
+  background-color: var(--red);
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  font-size: x-small;
+}
+.MuiAutocomplete-root .MuiAutocomplete-inputRoot .MuiAutocomplete-input {
+  /* height: 26.85px; */
+  padding: 0.4rem !important;
+  border: none !important;
+}
+
+.MuiAutocomplete-root .MuiAutocomplete-inputRoot .MuiAutocomplete-input:hover {
+  border: none !important;
+}
+
+.MuiOutlinedInput-root {
+  padding: 0px !important;
+}
+
+.MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
+  border: solid 2px rgba(0, 0, 0, 0.23) !important;
+}
+.MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.23) !important;
+}
+
+.MuiInputLabel-root {
+  top: -11px !important;
+}
+.MuiInputLabel-shrink {
+  top: -2px !important;
+}
+
+.tarification-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mes-projets--title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--blue) !important;
+  height: 2.5rem;
+  text-transform: uppercase;
+  gap: 0.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-weight: var(--bold);
+  font-size: 1rem;
+}
+
+.MuiInputLabel-formControl {
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  position: absolute !important;
+  left: -5px !important;
+  color: rgb(0 0 0 / 69%) !important;
+}
+
+.MuiAutocomplete-option {
+  padding: 0px 5px !important;
+  min-height: 23px !important;
+}
+
+.MuiCheckbox-root {
+  padding: 0 !important;
+  justify-content: start !important;
+  width: 20px !important;
+}
+
+.MuiOutlinedInput-root .MuiAutocomplete-input {
+  color: var(--blue);
+}
