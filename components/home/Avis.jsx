@@ -111,7 +111,12 @@ export default function Avis({
       deleteAvisAssistant.accept === true
     ) {
       async function deleteFavourite() {
-        const data = await deleteAvis(actualProject._id, assistantId, userId);
+        const data = await deleteAvis(
+          actualProject._id,
+          assistantId,
+          userId,
+          userType === "client" ? "client" : "assistant"
+        );
         console.log(data);
         dispatch(
           updateDeleteAvisAssistant({

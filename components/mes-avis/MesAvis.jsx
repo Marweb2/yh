@@ -492,7 +492,8 @@ export default function MesAvis() {
                         await deleteAvis(
                           infoProjectAssistant?._id,
                           infoProjectAssistant?.avisId,
-                          userId
+                          userId,
+                          userType === "client" ? "client" : "assistant"
                         );
                         setRender((a) => a + 1);
                         setShowPopUP(false);

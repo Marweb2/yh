@@ -80,19 +80,28 @@ export const PATCH = async (req, { params }) => {
 export const DELETE = async (req, { params }) => {
   try {
     const clientId = getClientId(req);
+    const type = req.nextUrl.searchParams.get("type");
     const { projectId, avisId } = params;
 
     await validateUserId(clientId);
+    let data;
 
     if (!isValidObjectId(avisId)) {
       return createErrorResponse("avisId must be a valid objectId", 400);
     }
-
-    const data = await AvisProjet.findOneAndUpdate(
-      { projectId, _id: avisId },
-      { visibility: "hidden" },
-      { new: true }
-    );
+    if (type === "client") {
+      data = await AvisProjet.findOneAndUpdate(
+        { projectId, _id: avisId },
+        { visibility: "hidden" },
+        { new: true }
+      );
+    } else {
+      data = await AvisProjet.findOneAndUpdate(
+        { projectId, _id: avisId },
+        { visibilityInAssistant: "hidden" },
+        { new: true }
+      );
+    }
 
     return createJsonResponse({
       hiddden: true,

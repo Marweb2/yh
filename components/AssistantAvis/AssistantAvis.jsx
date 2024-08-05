@@ -1,14 +1,16 @@
 /** @format */
 
 import styles from "../../styles/home/Avis.module.css";
+import style from "@/styles/projet/Projet.module.css";
 
 // components
 import Image from "next/image";
 import { isEmpty } from "@/lib/utils/isEmpty";
+import { CSSTransition } from "react-transition-group";
 
 // react
 import { UidContext } from "@/context/UidContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 // redux
 import { setActualAssistant } from "@/redux/slices/projetSlice";
@@ -62,6 +64,10 @@ export default function AssistantAvis({
   const { deleteAvisAssistant } = useSelector((state) => state.popUp);
   const { pageActuelle, userInfos, indexAvisSelectionee, renderAvis } =
     useSelector((state) => state.clientAvis);
+  const [active, setActive] = useState(false);
+  const ref = useRef();
+
+  // console.log(projectId.deletedByClient);
 
   const {
     clientProjets,
@@ -96,7 +102,8 @@ export default function AssistantAvis({
   useEffect(() => {
     if (deleteAvisAssistant.id === _id && deleteAvisAssistant.accept === true) {
       async function deleteFavourite() {
-        const data = await deleteAvis(projectId._id, _id, userId);
+        const data = await deleteAvis(projectId._id, _id, userId, "assistant");
+        console.log("salut", data);
         dispatch(
           updateDeleteAvisAssistant({
             accept: false,
@@ -142,6 +149,63 @@ export default function AssistantAvis({
           : `${styles.contAss} `
       }
     >
+      <CSSTransition
+        in={active}
+        timeout={350}
+        classNames={"pcf"}
+        unmountOnExit
+        nodeRef={ref}
+      >
+        <div ref={ref} className={style.popupContainer}>
+          <div className={`${style.popupMsg} cft`}>
+            <div className={style.popupClose}>
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "right",
+                  cursor: "pointer",
+                }}
+                onClick={() => setActive(false)}
+              >
+                <CgClose />
+              </span>
+            </div>
+            <div className={style.hr} />
+            <div className={style.popupMiddle}>
+              <div className={style.popupContenu}>
+                <p
+                  style={{
+                    textAlign: "left",
+                    hyphens: "auto",
+                    // wordSpacing: "-0.1rem",
+                    fontSize: "14px",
+                    lineHeight: "16px",
+                  }}
+                >
+                  ce projet n&apos;existe plus ou ce projet n&apos;est pas
+                  disponible pour le moment. De ce fait, Voulez-vous supprimer
+                  ce projet de votre côté aussi ou le conserver dans votre
+                  historique?
+                </p>
+              </div>
+              <div className={style.popupButton}>
+                <button
+                  style={{
+                    background: "#badf5b",
+                  }}
+                  onClick={async () => {
+                    await deleteAvis(projectId._id, _id, userId, "assistant");
+                    setRenderPage((a) => a + 1);
+                    setActive(false);
+                  }}
+                >
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CSSTransition>
       <div className={styles.top}>
         <div className={styles.cont}>
           <div className={styles.left}>
@@ -203,6 +267,10 @@ export default function AssistantAvis({
       </div>
       <div
         onClick={() => {
+          if (projectId.deletedByClient) {
+            setActive(true);
+            return;
+          }
           dispatch(
             fetchClientProjets({
               actualClientProjet: projectId,
