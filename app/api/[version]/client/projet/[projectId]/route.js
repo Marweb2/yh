@@ -148,21 +148,25 @@ export const DELETE = async (req, { params }) => {
 
     await connectToMongo();
 
-    await ProjetModel.findOneAndDelete({ _id: projectId });
-    const avis = await AvisProjet.find({ projectId }).select("_id");
-    const avisIds = avis.map((a) => a._id);
-    await AvisProjet.findOneAndDelete({ projectId });
-    await ConversationModel.findOneAndDelete({ projectId });
-    await ClientFavorite.deleteMany({
-      avisId: {
-        $in: avisIds,
-      },
-    });
-    await AssistantFavorite.deleteMany({
-      avisId: {
-        $in: avisIds,
-      },
-    });
+    await ProjetModel.findOneAndUpdate(
+      { _id: projectId },
+      { deletedByClient: true }
+    );
+
+    // const avis = await AvisProjet.find({ projectId }).select("_id");
+    // const avisIds = avis.map((a) => a._id);
+    // await AvisProjet.findOneAndDelete({ projectId });
+    // await ConversationModel.findOneAndDelete({ projectId });
+    // await ClientFavorite.deleteMany({
+    //   avisId: {
+    //     $in: avisIds,
+    //   },
+    // });
+    // await AssistantFavorite.deleteMany({
+    //   avisId: {
+    //     $in: avisIds,
+    //   },
+    // });
 
     return new NextResponse(
       JSON.stringify(

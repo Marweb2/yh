@@ -71,7 +71,7 @@ export const GET = async (req, { params }) => {
     if (filter === "all") {
       avisClient = await AvisProjet.find({
         assistantId,
-        visibility: "visible",
+        visibilityInAssistant: "visible",
       })
         .select("-visibility")
         .sort({ correspondance: -1, createdAt: -1 })
@@ -110,12 +110,12 @@ export const GET = async (req, { params }) => {
 
       countAvis = await AvisProjet.countDocuments({
         assistantId,
-        visibility: "visible",
+        visibilityInAssistant: "visible",
       });
     } else {
       avisClient = await AvisProjet.find({
         assistantId,
-        visibility: "visible",
+        visibilityInAssistant: "visible",
         statut: filter,
       })
         .select("-visibility")
@@ -133,7 +133,7 @@ export const GET = async (req, { params }) => {
 
       countAvis = await AvisProjet.countDocuments({
         assistantId,
-        visibility: "visible",
+        visibilityInAssistant: "visible",
         statut: filter,
       });
 

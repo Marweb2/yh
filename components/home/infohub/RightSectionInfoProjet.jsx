@@ -265,7 +265,8 @@ export default function RightSectionInfoProjet({
             ? actualAvis.projectId._id
             : actualConversationAvis._id,
           comp?._id,
-          userId
+          userId,
+          userType === "client" ? "client" : "assistant"
         );
         //.log(data); actualAvis.projectId._id
         dispatch(

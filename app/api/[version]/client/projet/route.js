@@ -48,6 +48,15 @@ export const GET = async (req, { params }) => {
     const projets = await ProjetModel.find({
       isVisible: true,
       clientId: userId,
+      // $or: [
+      //   {
+      //     deletedByClient: false,
+      //   },
+      //   {
+      //     deletedByClient: null,
+      //   },
+      // ],
+      deletedByClient: false,
     })
       .select("name _id")
       .sort({ createdAt: -1 });
@@ -190,9 +199,11 @@ export const PATCH = async (req, { params }) => {
     );
     const data = await ProjetModel.updateMany(
       {},
-      { dateString: dateHeureFormattee },
+      { deletedByClient: false },
       { new: true }
     );
+
+    await AvisProjet.updateMany({}, { visibilityInAssistant: "visible" });
     return createJsonResponse({ updated: true, data });
   } catch (err) {
     return createErrorResponse(err.message, 500);

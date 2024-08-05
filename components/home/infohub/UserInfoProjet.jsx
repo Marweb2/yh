@@ -250,7 +250,8 @@ export default function UserInfoProjet({
         const data = await deleteAvis(
           userType === "client" ? actualProject._id : actualClientProjet._id,
           comp?._id,
-          userId
+          userId,
+          userType === "client" ? "client" : "assistant"
         );
         dispatch(
           updateDeleteAvisAssistant({

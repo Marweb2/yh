@@ -79,19 +79,45 @@ export default function InfoHub({
     prev,
     next,
   } = useSelector((state) => state.clientProject);
+  const {
+    conversationAvis,
+    actualConversationAvis,
+    conversationAvisLength,
+    conversationAvisIndex,
+  } = useSelector((state) => state.conversationAvis);
+  const { avis, actualAvis, index, length } = useSelector(
+    (state) => state.rightAvis
+  );
+  const [isDeleted, setIsDeleted] = useState(false);
   const pathname = usePathname();
+  useEffect(() => {
+    setIsDeleted(
+      infosStatus === "middle" || infosStatus === "messageIcon"
+        ? actualClientProjet?.deletedByClient
+        : infosStatus === "rightFavourite" || infosStatus === "fav"
+        ? actualAvis.projectId.deletedByClient
+        : actualConversationAvis?.projectId?.deletedByClient
+    );
+  }, [isActive, actualClientProjet, actualAvis, actualConversationAvis]);
+
+  // useEffect(() => {
+  //   if (isDeleted) {
+  //     setIsActive({ obj: "mes" });
+  //   }
+  // }, [isDeleted]);
 
   useEffect(() => {
     if (
       infosStatus === "conversationFavourite" ||
       infosStatus === "messageIcon" ||
-      infosStatus === "fav"
+      infosStatus === "fav" ||
+      isDeleted
     ) {
       setIsActive({ obj: "mes" });
     } else {
       setIsActive({ obj: "infos" });
     }
-  }, [infosStatus]);
+  }, [infosStatus, isDeleted]);
 
   useEffect(() => {
     if (firstRender) {
@@ -223,62 +249,87 @@ export default function InfoHub({
     }
   }, [isFinish]);
 
+  console.log(actualConversationAvis?.projectId?.deletedByClient);
+
   return (
     <ClientOnly>
       <div className={styles.container}>
         {pathname !== "/mes-projets" && pathname !== "/mes-avis" && (
           <div className={styles.top}>
-            <div className={styles.menu}>
-              <label
-                onClick={() => setIsActive({ obj: "infos" })}
-                className={
-                  isActive.obj === "infos" ? `${styles.active} pen` : null
-                }
-              >
-                <i>
-                  <TbBulb size={"1.35rem"} />
-                </i>
-                <span className="usn">Infoprojet</span>
-              </label>
-              <label
-                onClick={() => setIsActive({ obj: "qs" })}
-                className={
-                  isActive.obj === "qs" ? `${styles.active} pen` : null
-                }
-              >
-                <i>
-                  <CiCircleList size={"1.35rem"} />
-                </i>
-                <span className="usn">Questions</span>
-              </label>
-
-              {(infosStatus === "middle" || infosStatus === "messageIcon") && (
+            {isDeleted === false ? (
+              <div className={styles.menu}>
                 <label
-                  onClick={() => setIsActive({ obj: "avis" })}
+                  onClick={() => setIsActive({ obj: "infos" })}
                   className={
-                    isActive.obj === "avis" ? `${styles.active} pen` : null
+                    isActive.obj === "infos" ? `${styles.active} pen` : null
                   }
                 >
                   <i>
-                    <GoBellFill size={"1.25rem"} />
+                    <TbBulb size={"1.35rem"} />
                   </i>
-                  <span className="usn">Avis Potentiels</span>
+                  <span className="usn">Infoprojet</span>
                 </label>
-              )}
-              <label
-                onClick={() => setIsActive({ obj: "mes" })}
-                className={
-                  isActive.obj === "mes"
-                    ? `${styles.active} mobileVersion pen`
-                    : "mobileVersion"
-                }
+                <label
+                  onClick={() => setIsActive({ obj: "qs" })}
+                  className={
+                    isActive.obj === "qs" ? `${styles.active} pen` : null
+                  }
+                >
+                  <i>
+                    <CiCircleList size={"1.35rem"} />
+                  </i>
+                  <span className="usn">Questions</span>
+                </label>
+
+                {(infosStatus === "middle" ||
+                  infosStatus === "messageIcon") && (
+                  <label
+                    onClick={() => setIsActive({ obj: "avis" })}
+                    className={
+                      isActive.obj === "avis" ? `${styles.active} pen` : null
+                    }
+                  >
+                    <i>
+                      <GoBellFill size={"1.25rem"} />
+                    </i>
+                    <span className="usn">Avis Potentiels</span>
+                  </label>
+                )}
+                <label
+                  onClick={() => setIsActive({ obj: "mes" })}
+                  className={
+                    isActive.obj === "mes"
+                      ? `${styles.active} mobileVersion pen`
+                      : "mobileVersion"
+                  }
+                >
+                  <i>
+                    <TfiEmail size={"1.2rem"} />
+                  </i>
+                  <span className="usn">Messagerie</span>
+                </label>
+              </div>
+            ) : (
+              <div
+                style={{
+                  justifyContent: "center",
+                }}
+                className={styles.menu}
               >
-                <i>
-                  <TfiEmail size={"1.2rem"} />
-                </i>
-                <span className="usn">Messagerie</span>
-              </label>
-            </div>
+                <label
+                  className={
+                    isActive.obj === "mes"
+                      ? `${styles.active} mobileVersion pen`
+                      : "mobileVersion"
+                  }
+                >
+                  <i>
+                    <TfiEmail size={"1.2rem"} />
+                  </i>
+                  <span className="usn">Messagerie</span>
+                </label>
+              </div>
+            )}
           </div>
         )}
         {isActive.obj !== "mes" ? (
